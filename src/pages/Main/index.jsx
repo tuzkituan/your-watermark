@@ -84,7 +84,7 @@ export default class Main extends Component {
                         <input
                             type="range" min="1" max="50"
                             value={logoSize}
-                            class={styles.slider}
+                            className={styles.slider}
                             onChange={(e) => {
                                 this.setState({
                                     logoSize: e.target.value
@@ -97,7 +97,7 @@ export default class Main extends Component {
                         <input
                             type="range" min="1" max="50"
                             value={textSize}
-                            class={styles.slider}
+                            className={styles.slider}
                             onChange={(e) => {
                                 this.setState({
                                     textSize: e.target.value
@@ -121,8 +121,42 @@ export default class Main extends Component {
             a.download = 'your-watermark.jpg';
             a.click();
         })
+        this.addUserToServer()
     }
 
+    addUserToServer = async () => {
+        const { text, selectedIcon } = this.state;
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Access-Control-Allow-Origin", "*")
+        // myHeaders.append('Accept', 'application/json');
+        // myHeaders.append('Access-Control-Allow-Credentials', 'true');
+        // myHeaders.append('GET', 'POST', 'OPTIONS');
+        myHeaders.append('Access-Control-Allow-Origin', 'https://arcane-reaches-46099.herokuapp.com/api/create-new-watermark-user');
+
+        var raw = JSON.stringify({
+            "name": text,
+            "type": selectedIcon === 1 ? 'ig' : 'fb'
+        })
+
+        var requestOptions = {
+            mode: 'cors',
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("https://arcane-reaches-46099.herokuapp.com/api/create-new-watermark-user", requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                // console.log(result)
+            })
+            .catch(error => {
+                // console.log('error', error) 
+            });
+    }
     render() {
         return (
             <div className={styles.Main}>
