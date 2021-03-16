@@ -35,13 +35,20 @@ export default class Main extends Component {
                     <div id="canvasRef" ref={this.canvasRef} className={styles.imageContainer}>
                         {selectedIcon === 1 &&
                             <div className={styles.imgContainer}>
-                                <img src={IG} alt='instagram' className={styles.imgLogo}
-                                    style={{ width: `${logoSize}px`, height: `${logoSize}px` }} /></div>}
+                                <img src={IG} alt='instagram'
+                                    className={styles.imgLogo}
+                                    style={{ width: `${logoSize}px`, height: `${logoSize}px` }} />
+                            </div>}
 
                         {selectedIcon === 2 &&
-                            <div className={styles.imgContainer}><img src={FB} alt='facebook' className={styles.imgLogo}
-                                style={{ width: `${logoSize}px`, height: `${logoSize}px` }} /></div>}
+                            <div className={styles.imgContainer}>
+                                <img src={FB} alt='facebook'
+                                    className={styles.imgLogo}
+                                    style={{ width: `${logoSize}px`, height: `${logoSize}px` }} />
+                            </div>}
+
                         {/* <div className={styles.divider} /> */}
+                        
                         <span className={styles.textLogo}>
                             <span className={styles.text} style={{ fontSize: `${textSize}px` }}>
                                 {text}
