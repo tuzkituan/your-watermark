@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+.Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    .title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    .borderContainer {
+        border-radius: 5px;
+        overflow: hidden;
+        min-width: 300px;
+        margin-top: 20px;
+    }
+    .exportImageContainer {
+        padding: 40px 30px;
+        background-color: black;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+     
+        width: 100%;
+        .imgLogo {
+            // width: 40px;
+            // height: 40px;
+        }
+        .divider {
+            border-left-width: 1px;
+            border-left-color: #fff;
+            padding: 0 10px;
+        }
+        .textLogo {
+            color: #fff;
+            // text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+            font-weight: 600;
+            // font-size: 22px;
+        }
+    }
+    .exportButtonContainer {
+        width: 100%;
+        text-align: center;
+        background-color: teal;
+        span {
+            padding: 10px;
+            color: white;
+            display: block;
+            font-size: 14px;
+            cursor: pointer;
+            &:hover {
+                background-color: rgb(1, 82, 82);
+                transition: 0.3s;
+            }
+        }
+    }
+    .inputContainer {
+        background-color: black;
+        input {
+            background-color: rgb(61, 61, 61);
+            border: none;
+            width: 100%;
+            height: 65px;
+            // border-radius: 30px;
+            color: white;
+            text-align: center;
+            font-size: 15px;
+        }
+    }
+    textarea:focus, input:focus{
+        outline: none;
+    }
+}
