@@ -144,7 +144,7 @@ export default class Main extends Component {
         // myHeaders.append('Accept', 'application/json');
         // myHeaders.append('Access-Control-Allow-Credentials', 'true');
         // myHeaders.append('GET', 'POST', 'OPTIONS');
-        myHeaders.append('Access-Control-Allow-Origin', 'https://arcane-reaches-46099.herokuapp.com/api/create-new-watermark-user');
+        myHeaders.append('Access-Control-Allow-Origin', 'https://serene-beach-31118.herokuapp.com/api/create-new-watermark-user');
 
         var raw = JSON.stringify({
             "name": text,
@@ -159,7 +159,7 @@ export default class Main extends Component {
             redirect: 'follow'
         };
 
-        fetch("https://arcane-reaches-46099.herokuapp.com/api/create-new-watermark-user", requestOptions)
+        fetch("https://serene-beach-31118.herokuapp.com/api/create-new-watermark-user", requestOptions)
             .then(response => response.text())
             .then(result => {
                 // console.log(result)
