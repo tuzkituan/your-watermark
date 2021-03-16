@@ -1,0 +1,16 @@
+.Main {
+    background-color: red;
+    .exportImageContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        .imgLogo {
+            width: 20px;
+            height: 20px;
+        }
+        .textLogo {
+    
+        }
+    }
+}
