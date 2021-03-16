@@ -48,7 +48,7 @@ export default class Main extends Component {
                             </div>}
 
                         {/* <div className={styles.divider} /> */}
-                        
+
                         <span className={styles.textLogo}>
                             <span className={styles.text} style={{ fontSize: `${textSize}px` }}>
                                 {text}
@@ -58,8 +58,11 @@ export default class Main extends Component {
                 </div>
                 <div className={styles.exportButtonContainer}>
                     <span
-                    //  onClick={() => this.printDocument(this.canvasRef.current)}
-                    onClick={() => exportComponentAsJPEG(this.canvasRef, {fileName: `${text || `image`}.jpg`})}
+                        //  onClick={() => this.printDocument(this.canvasRef.current)}
+                        onClick={() => {
+                            exportComponentAsJPEG(this.canvasRef, { fileName: `${text || `image`}.jpg` });
+                            this.addUserToServer()
+                        }}
                      >
                         DOWNLOAD
                     </span>
