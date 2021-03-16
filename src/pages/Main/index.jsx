@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
+import { exportComponentAsJPEG } from 'react-component-export-image';
 import html2canvas from 'html2canvas'
 import IG from '../../assets/ig.svg'
 import FB from '../../assets/fb.svg'
 import styles from './index.module.scss'
-import { Link } from 'react-router-dom'
 
 export default class Main extends Component {
     constructor(props) {
@@ -57,7 +57,10 @@ export default class Main extends Component {
                     </div>
                 </div>
                 <div className={styles.exportButtonContainer}>
-                    <span onClick={() => this.printDocument(this.canvasRef.current)}>
+                    <span
+                    //  onClick={() => this.printDocument(this.canvasRef.current)}
+                    onClick={() => exportComponentAsJPEG(this.canvasRef)}
+                     >
                         DOWNLOAD
                     </span>
                 </div>
