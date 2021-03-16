@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { exportComponentAsJPEG } from 'react-component-export-image';
 import IG from '../../assets/ig.svg'
 import FB from '../../assets/fb.svg'
+import PENCIL from '../../assets/pencil.svg'
 import styles from './index.module.scss'
 
 export default class Main extends Component {
@@ -10,8 +11,8 @@ export default class Main extends Component {
         this.state = {
             text: '',
             selectedIcon: 1, // 1 ig, 2 fb,
-            logoSize: 50, // px
-            textSize: 22, // px
+            logoSize: 48, // px
+            textSize: 30, // px
         }
         this.canvasRef = React.createRef();
     }
@@ -58,7 +59,7 @@ export default class Main extends Component {
                 <div className={styles.exportButtonContainer}>
                     <span
                     //  onClick={() => this.printDocument(this.canvasRef.current)}
-                    onClick={() => exportComponentAsJPEG(this.canvasRef)}
+                    onClick={() => exportComponentAsJPEG(this.canvasRef, {fileName: `${text || `image`}.jpg`})}
                      >
                         DOWNLOAD
                     </span>
@@ -72,6 +73,7 @@ export default class Main extends Component {
                             placeholder="Enter your text here"
                             className={styles.textInput} />
                     </form>
+                    <img src={PENCIL} alt='pencil' className={styles.pencilIcon} />
                 </div>
                 <div className={styles.iconContainer}>
                     <div
