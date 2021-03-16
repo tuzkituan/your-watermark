@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { exportComponentAsJPEG } from 'react-component-export-image';
-import html2canvas from 'html2canvas'
 import IG from '../../assets/ig.svg'
 import FB from '../../assets/fb.svg'
 import styles from './index.module.scss'
@@ -124,15 +123,15 @@ export default class Main extends Component {
         )
     }
 
-    printDocument = (domElement) => {
-        html2canvas(domElement).then(canvas => {
-            var a = document.createElement('a');
-            a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-            a.download = 'your-watermark.jpg';
-            a.click();
-        })
-        this.addUserToServer()
-    }
+    // printDocument = (domElement) => {
+    //     html2canvas(domElement).then(canvas => {
+    //         var a = document.createElement('a');
+    //         a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+    //         a.download = 'your-watermark.jpg';
+    //         a.click();
+    //     })
+    //     this.addUserToServer()
+    // }
 
     addUserToServer = async () => {
         const { text, selectedIcon } = this.state;
